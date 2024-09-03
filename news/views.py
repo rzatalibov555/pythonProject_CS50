@@ -1,35 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
+from .models import *
 
 # Create your views here.
 def index(request):
-    return HttpResponse("<h1>News - Home</h1>")
+    menu = ['Home', "About", "Contact", "Settings"]
+    posts = News.objects.all()
+    
+    return render(request, 'news/index.html', {'title':"Home", "menu": menu, "posts":posts})
 
 def about(request):
-    return HttpResponse("<h1>News - About</h1>")
+    menu = ['Home', "About", "Contact", "Settings"]
+    return render(request,'news/about.html', {'title':"About","menu": menu})
 
 def category(request):
     return HttpResponse("<h1>News - Category</h1>")
-
-
-
-
-
-
-
-# news
-    # - index
-    # - about
-    # - contact
-    # - team
-# events
-    # - index
-    # - about
-    # - contact
-    # - team
-# category
-    # - index
-    # - about
-    # - contact
-    # - team

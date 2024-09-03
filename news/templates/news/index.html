@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>{{title}}</title>
+    </head>
+<body>
+
+    <ul>
+        {% for m in menu %}
+          <li>{{ m }}</li>
+        {% endfor %}
+      </ul>
+
+      <h1>ALL POSTS</h1>
+
+      
+        {% for p in posts %}
+            <h2>{{p.title}}</h2>
+            <p>{{p.content}}</p>
+            <hr>
+        {% endfor %}
+     
+    
+
+
+</body>
+</html>
