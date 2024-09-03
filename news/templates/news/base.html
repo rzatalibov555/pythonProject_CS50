@@ -12,13 +12,27 @@
     {% block main_menu %}
         <ul>
             {% for m in menu %}
-            <li>{{ m }}</li>
+                
+                {% if not forloop.last %}
+                    <li>{{ m }}</li>
+                {% else %}
+                    <li class="last">{{ m }}</li>
+                    {% autoescape off %}
+                        {% comment %} <li class="last">{{ m|linebreaks|truncatewords:60 }}</li> {% endcomment %}
+                    {% endautoescape %}
+                    {% comment %} <li class="last">{{ m|linebreaks|truncatewords:60 }}</li> {% endcomment %}
+                {% endif %}
+            
             {% endfor %}
       </ul>
     {% endblock main_menu %}
 
 
     {% block content %}
+    
+    {% endblock %}
+
+    {% block content2 %}
     
     {% endblock %}
 
