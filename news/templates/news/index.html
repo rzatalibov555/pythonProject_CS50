@@ -1,29 +1,7 @@
-<!DOCTYPE html>
-<html>
-    
-    <head>
-        <meta charset="UTF-8">
-        <title>{{title}}</title>
-    </head>
-<body>
-
-    <ul>
-        {% for m in menu %}
-          <li>{{ m }}</li>
-        {% endfor %}
-      </ul>
-
-      <h1>ALL POSTS</h1>
-
-      
-        {% for p in posts %}
-            <h2>{{p.title}}</h2>
-            <p>{{p.content}}</p>
-            <hr>
-        {% endfor %}
-     
-    
+{% extends "news/base.html" %}
 
 
-</body>
-</html>
+{% block content %}
+    <h1>Home page Heading 1</h1>
+    <p>My first paragraph.</p>
+{% endblock %}

@@ -1,9 +1,12 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
     
     <head>
         <meta charset="UTF-8">
         <title>{{title}}</title>
+        <link rel="stylesheet" href="{% static './news/css/style.css' %}">
     </head>
 <body>
     {% block main_menu %}
