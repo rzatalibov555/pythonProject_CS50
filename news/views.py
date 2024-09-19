@@ -14,5 +14,8 @@ def about(request):
     menu = ['Home', "About", "Contact", "Settings"]
     return render(request,'news/about.html', {'title':"About","menu": menu})
 
-def category(request):
-    return HttpResponse("<h1>News - Category</h1>")
+def show_category(request, cat_id):
+    return HttpResponse("<h1>News - Category {cat_id}</h1>")
+
+def detail(request, id):
+    return HttpResponse("sdsdsd")
